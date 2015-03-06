@@ -42,14 +42,11 @@ int ParseCmdLine(int argc, char *argv[])
 std::string GenerateString(int length)
 {
     std::string ciphertext;
-    std::random_device rd;
-//  std::mt19937 mtengine(rd()); Less secure (PRNG) alternative.
-//  std::uniform_int_distribution<int> uintdist(0,61); Less secure (PRNG) alternative.
+    std::mt19937 mtengine = std::mt19937{std::random_device{}()};
 
     for(auto i = 0; i < length; ++i)
     {
-//      char randchar = uintdist(mtengine); Less secure (PRNG) alternative.
-        char randchar = rd() % 61;
+        char randchar = mtengine() % 61;
         if (randchar < 10)
         {
             randchar += 48;
