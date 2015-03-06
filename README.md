@@ -1,7 +1,7 @@
 rand-pass
 =========
 
-Generates a random case-sensitive alphanumeric passkey of a given length using an implementation-defined random_device.
+Generates a pseudorandom case-sensitive alphanumeric passkey of a given length using a mersenne-twister engine seeded with an implementation-defined random_device.
 
 Usage
 =====
@@ -16,4 +16,4 @@ To generate a key of length 6.
 
 To-do
 =====
-I'll probably put together a build configuration soon.
+I'll probably put together a build configuration soon. Maybe.
